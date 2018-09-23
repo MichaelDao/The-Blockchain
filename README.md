@@ -1,2 +1,2 @@
-# Easy-Blockchain
-While you were out partying, I studied the :ok_hand: :b:lockchain :ok_hand: :100::100::100:
+# Easy Blockchain
+Simple blockchain i made because its all the rage these days.
