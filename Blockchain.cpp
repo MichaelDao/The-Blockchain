@@ -6,25 +6,25 @@
 
 Blockchain::Blockchain() {
     // blocks gotta start somewhere
-    _vChain.emplace_back(Block(0, "Genesis Block"));
+    vectorChain.emplace_back(Block(0, "Genesis Block"));
 
     // making this easy by changing its numbers
-    _nDifficulty = 5;
+    difficulty = 5;
 }
 
 void Blockchain::AddBlock(Block bNew)
 {
     // look at previous blocks hash
-    bNew.sPreviousHash = _GetLastBlock().GetHash();
+    bNew.prevHash = GetLastBlock().GetHash();
 
     // mine a block based on difficulty
-    bNew.MineBlock(_nDifficulty);
+    bNew.MineBlock(difficulty);
 
     // complete procees of adding block to blockchain
-    _vChain.push_back(bNew);
+    vectorChain.push_back(bNew);
 }
 
-Block Blockchain::_GetLastBlock() const
+Block Blockchain::GetLastBlock() const
 {
-    return _vChain.back();
+    return vectorChain.back();
 }

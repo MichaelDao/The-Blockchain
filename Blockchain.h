@@ -18,11 +18,11 @@ public:
     void AddBlock(Block bNew);
 
 private:
-    uint32_t _nDifficulty;
-    vector<Block> _vChain;
+    uint32_t difficulty;
+    vector<Block> vectorChain;
 
     // method signature
-    Block _GetLastBlock() const;
+    Block GetLastBlock() const;
 };
 
 #endif //BLOCKCHAIN_BLOCKCHAIN_H

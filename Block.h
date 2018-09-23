@@ -9,16 +9,15 @@
 #include <iostream>
 #include <sstream>
 
-
 using namespace std;
 
 class Block
 {
 public:
-    string sPreviousHash;
+    string prevHash;
 
     // constructor takes paremeters index and data
-    Block(uint32_t nIndexIn, const string &sDataIn);
+    Block(uint32_t indexIn, const string &dataIn);
 
     // method signature specified
     string GetHash();
@@ -28,16 +27,13 @@ public:
 
 private:
     // all my private declarations
-    uint32_t _nIndex;
-    int64_t _nNonce;
-    string _sData;
-    string _sHash;
-    time_t _tTime;
+    uint32_t index;
+    int64_t nonce;
+    string data;
+    string hash;
+    time_t currentTime;
 
     // ensure hash cant be changed
-    string _CalculateHash() const;
-
+    string CalculateHash() const;
 };
-
-
 #endif //BLOCKCHAIN_BLOCK_H
